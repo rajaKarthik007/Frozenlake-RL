@@ -56,7 +56,7 @@ class Agent():
     
 if __name__ == "__main__":
     writer = SummaryWriter(comment = "-v-iter")
-    agent = Agent(gym.make('FrozenLake-v1', is_slippery=True))
+    agent = Agent(gym.make('FrozenLake-v1', is_slippery=False))
     n_iter = 0
     best_reward = 0.0
     while True:

@@ -42,11 +42,17 @@ updating best reward from 0.8 to 0.82
 Solved in 49 iterations
 ```
 
-The average reward graph when using value iteration is shown below for slippery and non slippery frozen lake:
+The average reward graph when using value iteration is shown below for slippery frozen lake:
 <table>
   <tr>
     <td><img src="images/slippery_frozenlake_convergence.png" width="700"/></td>
   </tr>
 </table>
 
+for non slippery frozen lake:
+<table>
+  <tr>
+    <td><img src="images/plain_frozenlake_convergence.png" width="700"/></td>
+  </tr>
+</table>
 
