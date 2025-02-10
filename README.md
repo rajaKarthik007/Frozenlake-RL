@@ -56,3 +56,10 @@ for non slippery frozen lake:
   </tr>
 </table>
 
+for slippery 8x8 frozen lake:
+<table>
+  <tr>
+    <td><img src="images/8x8_slippery_frozenlake_convergence.png" width="700"/></td>
+  </tr>
+</table>
+

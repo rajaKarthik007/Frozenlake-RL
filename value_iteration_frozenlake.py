@@ -6,6 +6,8 @@ from tensorboardX import SummaryWriter
 
 GAMMA = 0.9
 REWARD_THRESHOLD = 0.8
+MAPSIZE = "4x4" # can be changed to 8x8 as well
+SLIPPERY = True
 
 class Agent():
     def __init__(self, env):
@@ -56,7 +58,7 @@ class Agent():
     
 if __name__ == "__main__":
     writer = SummaryWriter(comment = "-v-iter")
-    agent = Agent(gym.make('FrozenLake-v1', is_slippery=False))
+    agent = Agent(gym.make('FrozenLake-v1', is_slippery=SLIPPERY, map_name=MAPSIZE))
     n_iter = 0
     best_reward = 0.0
     while True:
