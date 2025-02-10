@@ -42,10 +42,10 @@ updating best reward from 0.8 to 0.82
 Solved in 49 iterations
 ```
 
-The loss and reward graphs for crossentropy model are as following:
+The average reward graph when using value iteration is shown below for slippery and non slippery frozen lake:
 <table>
   <tr>
-    <td><img src="images/slippery_frozenlake_convergence.png" width="400"/></td>
+    <td><img src="images/slippery_frozenlake_convergence.png" width="700"/></td>
   </tr>
 </table>
 
