@@ -20,6 +20,8 @@ pip install -r requirements.txt
 To run the training scripts, 
 ```bash
 python3 value_iteration_frozenlake.py
+```
+```bash
 python3 q-learning_frozenlake.py
 ```
 
