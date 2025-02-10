@@ -17,9 +17,10 @@ You can install the requirements for the repo using the following command:
 pip install -r requirements.txt
 ```
 
-To run the training script, 
+To run the training scripts, 
 ```bash
 python3 value_iteration_frozenlake.py
+python3 q-learning_frozenlake.py
 ```
 
 The logs during training appear like the following:
