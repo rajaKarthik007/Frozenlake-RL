@@ -5,6 +5,7 @@ from collections import defaultdict
 from tensorboardX import SummaryWriter
 
 GAMMA = 0.9
+REWARD_THRESHOLD = 0.8
 
 class Agent():
     def __init__(self, env):
@@ -21,12 +22,11 @@ class Agent():
             self.transitions[(state, action)][next_state] += 1
             self.rewards[(state, action, next_state)] = reward
             if terminated or truncated:
-                print("done")
                 state, _ = self.env.reset()
             else:
                 state = next_state
     
-    def action_value(self, action, state):
+    def action_value(self, state, action):
         total_visits = sum(self.transitions[(state, action)].values())
         action_value = 0.0
         for s, visits in self.transitions[(state, action)].items():
@@ -56,14 +56,24 @@ class Agent():
     
 if __name__ == "__main__":
     writer = SummaryWriter(comment = "-v-iter")
-    
-    agent = Agent(gym.make('FrozenLake-v1', is_slippery=False))
-    
-    for i in range(50):
+    agent = Agent(gym.make('FrozenLake-v1', is_slippery=True))
+    n_iter = 0
+    best_reward = 0.0
+    while True:
+        n_iter += 1
         agent.play_n_random_steps(100)
         agent.value_iteration()
-        avg_reward = agent.test_episodes(10)
-        print(avg_reward)
+        avg_reward = agent.test_episodes(100)
+        writer.add_scalar("reward", avg_reward, n_iter)
+        if avg_reward > best_reward:
+            print(f"updating best reward from {best_reward} to {avg_reward}")
+            best_reward = avg_reward
+        if avg_reward > REWARD_THRESHOLD:
+            print(f"Solved in {n_iter} iterations")
+            print(agent.values)
+            break
+        
+        
     
     
     
