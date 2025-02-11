@@ -69,7 +69,7 @@ for slippery 8x8 frozen lake:
 convergence of reward in 4x4 FrozenLake using q-learning:
 <table>
   <tr>
-    <td><img src="images/8x8_slippery_frozenlake_convergence.png" width="700"/></td>
+    <td><img src="images/q-learning_convergence.png" width="700"/></td>
   </tr>
 </table>
 
