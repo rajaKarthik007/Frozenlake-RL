@@ -22,7 +22,7 @@ To run the training scripts,
 python3 value_iteration_frozenlake.py
 ```
 ```bash
-python3 q-learning_frozenlake.py
+python3 q_iteration_frozenlake.py
 ```
 
 The logs during training appear like the following:
